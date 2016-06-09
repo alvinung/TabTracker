@@ -47,7 +47,7 @@ public class Dashboard extends AppCompatActivity {
         Cursor cr = db.getTab(db);
         Log.d("Dashboard", "database set up");
         if (cr != null && cr.moveToFirst()) {
-//            do {
+            do {
                 // post to feed
                 String name = cr.getString(0);
                 String date = cr.getString(1);
@@ -83,7 +83,7 @@ public class Dashboard extends AppCompatActivity {
                 }
                 holder.addView(child);
                 Log.d("Dashboard", "posted 1 transaction to feed");
-//            } while (cr != null);
+            } while (cr.moveToNext());
         }
         cr.close();
         db.close();

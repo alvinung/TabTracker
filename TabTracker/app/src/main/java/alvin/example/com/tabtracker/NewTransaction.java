@@ -107,7 +107,7 @@ public class NewTransaction extends AppCompatActivity {
         else {
             // add to database
             db.addTab(db, name, date, amount, reason, type, loan);
-            db.close();
+//            db.close();
 
             // go to dashboard
             Intent intent = new Intent(this, Dashboard.class);
@@ -126,7 +126,7 @@ public class NewTransaction extends AppCompatActivity {
                 if (tabName.equals(cr.getString(0))) {
                     return true;
                 }
-            } while (cr.moveToFirst());
+            } while (cr.moveToNext());
         }
         cr.close();
 //        db.close();
