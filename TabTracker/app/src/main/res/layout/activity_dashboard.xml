@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="alvin.example.com.tabtracker.Dashboard"
+    android:background="#598cbc">
+
+    <TextView
+        android:layout_width="270dp"
+        android:layout_height="100dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="$0.00"
+        android:id="@+id/owedBox"
+        android:layout_marginTop="59dp"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textSize="60dp"
+        android:background="@drawable/textboxleft"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="270dp"
+        android:layout_height="100dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="$0.00"
+        android:id="@+id/oweBox"
+        android:layout_alignBottom="@+id/owedBox"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textSize="60dp"
+        android:background="@drawable/textboxright"
+        android:gravity="center_vertical|center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/owed_text"
+        android:id="@+id/owedText"
+        android:layout_above="@+id/oweBox"
+        android:layout_alignLeft="@+id/owedBox"
+        android:layout_alignStart="@+id/owedBox"
+        android:layout_alignRight="@+id/owedBox"
+        android:layout_alignEnd="@+id/owedBox"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="#ffffff"
+        android:textSize="32dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/owe_text"
+        android:id="@+id/oweText"
+        android:layout_above="@+id/oweBox"
+        android:layout_alignRight="@+id/oweBox"
+        android:layout_alignEnd="@+id/oweBox"
+        android:layout_alignLeft="@+id/oweBox"
+        android:layout_alignStart="@+id/oweBox"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="#ffffff"
+        android:textSize="32dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/history_text"
+        android:id="@+id/historyText"
+        android:layout_marginTop="27dp"
+        android:textColor="#ffffff"
+        android:textSize="32dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_below="@+id/owedBox"
+        android:layout_alignLeft="@+id/owedBox"
+        android:layout_alignStart="@+id/owedBox" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:text="@string/tabs_button"
+        android:id="@+id/tabsButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/historyText"
+        android:layout_alignStart="@+id/historyText"
+        android:background="@drawable/button"
+        android:textColor="#ffffff"
+        android:textSize="25dp"
+        android:onClick="allTabs" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:text="@string/new_transaction"
+        android:id="@+id/newTransButton1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/historyText"
+        android:layout_alignEnd="@+id/historyText"
+        android:background="@drawable/button"
+        android:textColor="#ffffff"
+        android:textSize="25dp"
+        android:onClick="newTransaction" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/historyText"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/tabsButton">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView"
+            android:layout_gravity="center"
+            android:paddingBottom="16dp"
+            android:fillViewport="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:isScrollContainer="true"
+                android:baselineAligned="false"
+                android:orientation="vertical"
+                android:id="@+id/feedLayout">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:paddingBottom="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:text="Alvin "
+                            android:textColor="#000000"
+                            android:id="@+id/postName1"
+                            android:textSize="30dp"
+                            android:background="#ffffff"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:text="paid "
+                            android:textColor="#959595"
+                            android:id="@+id/postStatus"
+                            android:textSize="30dp"
+                            android:background="#ffffff"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/postName1"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="10dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:text="You"
+                            android:textColor="#000000"
+                            android:id="@+id/postName2"
+                            android:textSize="30dp"
+                            android:background="#ffffff"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/postStatus"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="10dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:text="+ $150.00"
+                            android:textColor="#2fad13"
+                            android:id="@+id/transAmount"
+                            android:textSize="30dp"
+                            android:background="#ffffff"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="settled debt"
+                            android:textColor="#000000"
+                            android:id="@+id/postReason"
+                            android:textSize="25dp"
+                            android:background="#ffffff"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="05/19/2016"
+                            android:textColor="#000000"
+                            android:id="@+id/postDate"
+                            android:textSize="25dp"
+                            android:background="#ffffff"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginRight="10dp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:paddingBottom="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:text="You "
+                            android:textColor="#000000"
+                            android:id="@+id/postName3"
+                            android:textSize="30dp"
+                            android:background="#ffffff"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:text="charged "
+                            android:textColor="#959595"
+                            android:id="@+id/postStatus1"
+                            android:textSize="30dp"
+                            android:background="#ffffff"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/postName3"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="10dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:text="Alvin"
+                            android:textColor="#000000"
+                            android:id="@+id/postName4"
+                            android:textSize="30dp"
+                            android:background="#ffffff"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/postStatus1"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="10dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:text="$150.00"
+                            android:textColor="#000000"
+                            android:id="@+id/transAmount1"
+                            android:textSize="30dp"
+                            android:background="#ffffff"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="flat screen television"
+                            android:textColor="#000000"
+                            android:id="@+id/postReason1"
+                            android:textSize="25dp"
+                            android:background="#ffffff"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="05/17/2016"
+                            android:textColor="#000000"
+                            android:id="@+id/postDate1"
+                            android:textSize="25dp"
+                            android:background="#ffffff"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginRight="10dp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:paddingBottom="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:text="You "
+                            android:textColor="#000000"
+                            android:id="@+id/postName5"
+                            android:textSize="30dp"
+                            android:background="#ffffff"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:text="paid "
+                            android:textColor="#959595"
+                            android:id="@+id/postStatus7"
+                            android:textSize="30dp"
+                            android:background="#ffffff"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/postName5"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="10dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:text="Alvin"
+                            android:textColor="#000000"
+                            android:id="@+id/postName6"
+                            android:textSize="30dp"
+                            android:background="#ffffff"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/postStatus7"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="10dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:text="- $10.00"
+                            android:textColor="#bc0707"
+                            android:id="@+id/transAmount7"
+                            android:textSize="30dp"
+                            android:background="#ffffff"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="food"
+                            android:textColor="#000000"
+                            android:id="@+id/postReason7"
+                            android:textSize="25dp"
+                            android:background="#ffffff"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="05/15/2016"
+                            android:textColor="#000000"
+                            android:id="@+id/postDate7"
+                            android:textSize="25dp"
+                            android:background="#ffffff"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginRight="10dp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</RelativeLayout>

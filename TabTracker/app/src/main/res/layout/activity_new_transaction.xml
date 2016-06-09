@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="alvin.example.com.tabtracker.NewTransaction"
+    android:background="#598cbc">
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:text="@string/submit_button"
+        android:id="@+id/submitButton1"
+        android:background="@drawable/button"
+        android:textColor="#ffffff"
+        android:textSize="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="goDash" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/new_transaction"
+        android:id="@+id/newTransText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="#ffffff"
+        android:textSize="45dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/name_text"
+        android:id="@+id/nameText"
+        android:layout_below="@+id/newTransText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="111dp"
+        android:textColor="#ffffff"
+        android:textSize="35dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/amount_text"
+        android:id="@+id/amountText"
+        android:textColor="#ffffff"
+        android:textSize="35dp"
+        android:paddingTop="10dp"
+        android:layout_below="@+id/nameText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/reason_text"
+        android:id="@+id/reasonText"
+        android:layout_below="@+id/amountText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffff"
+        android:textSize="35dp"
+        android:paddingTop="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/nameInput"
+        android:layout_toRightOf="@+id/nameText"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/nameText"
+        android:gravity="center_vertical|center_horizontal|right"
+        android:textSize="35dp"
+        android:singleLine="true"
+        android:background="#ffffff"
+        android:paddingRight="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/amountInput1"
+        android:gravity="center_vertical|center_horizontal|right"
+        android:textSize="35dp"
+        android:singleLine="true"
+        android:background="#ffffff"
+        android:layout_alignBottom="@+id/amountText"
+        android:layout_toRightOf="@+id/amountText"
+        android:layout_alignRight="@+id/reasonInput"
+        android:layout_alignEnd="@+id/reasonInput"
+        android:paddingRight="10dp"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/reasonInput"
+        android:gravity="center_vertical|right"
+        android:textSize="35dp"
+        android:singleLine="true"
+        android:background="#ffffff"
+        android:layout_toRightOf="@+id/reasonText"
+        android:layout_alignRight="@+id/nameInput"
+        android:layout_alignEnd="@+id/nameInput"
+        android:layout_alignBottom="@+id/reasonText"
+        android:paddingRight="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/exist_text"
+        android:id="@+id/existText"
+        android:textColor="#ffffff"
+        android:textSize="35dp"
+        android:paddingTop="10dp"
+        android:layout_below="@+id/reasonInput"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingBottom="10dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/yes"
+        android:id="@+id/yesBox1"
+        android:textSize="30dp"
+        android:checked="false"
+        android:textColor="#ffffff"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="40dp"
+        android:layout_alignBottom="@+id/existText"
+        android:layout_toRightOf="@+id/existText"
+        android:layout_toEndOf="@+id/existText"
+        android:layout_below="@+id/reasonText" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no"
+        android:id="@+id/noBox1"
+        android:checked="false"
+        android:textSize="30dp"
+        android:textColor="#ffffff"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingLeft="10dp"
+        android:layout_alignBottom="@+id/yesBox1"
+        android:layout_toRightOf="@+id/yesBox1"
+        android:layout_toEndOf="@+id/yesBox1"
+        android:layout_alignTop="@+id/yesBox1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/dollar_sign"
+        android:id="@+id/dollaSign"
+        android:textSize="35dp"
+        android:paddingLeft="5dp"
+        android:gravity="center_vertical"
+        android:background="#ffffff"
+        android:layout_above="@+id/reasonText"
+        android:layout_toRightOf="@+id/amountText"
+        android:layout_toEndOf="@+id/amountText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/loan_text"
+        android:id="@+id/loanText"
+        android:textColor="#ffffff"
+        android:textSize="35dp"
+        android:paddingBottom="10dp"
+        android:layout_below="@+id/existText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/yes"
+        android:id="@+id/yesBox2"
+        android:textSize="30dp"
+        android:checked="false"
+        android:textColor="#ffffff"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="40dp"
+        android:layout_below="@+id/existText"
+        android:layout_toRightOf="@+id/loanText"
+        android:layout_toEndOf="@+id/loanText"
+        android:layout_alignBottom="@+id/loanText" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no"
+        android:id="@+id/noBox2"
+        android:checked="false"
+        android:textSize="30dp"
+        android:textColor="#ffffff"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/existText"
+        android:layout_toRightOf="@+id/yesBox2"
+        android:layout_toEndOf="@+id/yesBox2"
+        android:layout_alignBottom="@+id/yesBox2" />
+
+</RelativeLayout>

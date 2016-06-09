@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Tab Tracker</string>
+    <string name="owed_text">You are owed:</string>
+    <string name="owe_text">You owe:</string>
+    <string name="history_text">History</string>
+    <string name="tabs_button">All Tabs</string>
+    <string name="tabs_text">TABS</string>
+    <string name="new_transaction">New Transaction</string>
+    <string name="submit_button">Submit</string>
+    <string name="name_text">Name:\ \ </string>
+    <string name="exist_text">Existing Tab?\ \ \ \ \ \  \ \ \ \ \ </string>
+    <string name="loan_text">Are you loaning?\ \ \ \ \ \ </string>
+    <string name="reason_text">What is this for?\ \ </string>
+    <string name="settle_button">Settle</string>
+    <string name="settle_balance">Settle Balance</string>
+    <string name="balance_text">Balance:\ </string>
+    <string name="amount_text">Amount:\ \ </string>
+    <string name="memo_text">Memo:\ \ </string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="dollar_sign">$</string>
+</resources>
