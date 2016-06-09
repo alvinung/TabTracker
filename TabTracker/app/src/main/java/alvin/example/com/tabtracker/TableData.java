@@ -19,6 +19,6 @@ public class TableData {
         public static final String TYPE = "post_type";
         public static final String LOAN = "loan";
         public static final String TABS_TABLE = "tabs_table";
-        public static final String DATABASE_NAME = "tabs_data1";
+        public static final String DATABASE_NAME = "tabs_data2";
     }
 }

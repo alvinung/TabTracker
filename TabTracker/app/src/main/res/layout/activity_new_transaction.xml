@@ -20,7 +20,7 @@
         android:textSize="25dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="goDash" />
+        android:onClick="submit" />
 
     <TextView
         android:layout_width="wrap_content"

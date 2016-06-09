@@ -85,9 +85,10 @@ public class NewTransaction extends AppCompatActivity {
         amount = AMOUNT.getText().toString();
         reason = REASON.getText().toString();
 
-        exist = checkExist(name);
+        DatabaseOperations db = new DatabaseOperations(ctx);
+        exist = checkExist(name, db);
 
-        DatabaseOperations dbWrite = new DatabaseOperations(ctx);
+    //    DatabaseOperations dbWrite = new DatabaseOperations(ctx);
         date = DatabaseOperations.getDate();
 
         // checking loan status
@@ -105,8 +106,8 @@ public class NewTransaction extends AppCompatActivity {
         }
         else {
             // add to database
-            dbWrite.addTab(dbWrite, name, date, amount, reason, type, loan);
-            dbWrite.close();
+            db.addTab(db, name, date, amount, reason, type, loan);
+            db.close();
 
             // go to dashboard
             Intent intent = new Intent(this, Dashboard.class);
@@ -117,9 +118,9 @@ public class NewTransaction extends AppCompatActivity {
     }
 
 
-    public boolean checkExist (String tabName) {
-        DatabaseOperations dbRead = new DatabaseOperations(ctx);
-        Cursor cr = dbRead.getTab(dbRead);
+    public boolean checkExist (String tabName, DatabaseOperations db) {
+//        DatabaseOperations db = new DatabaseOperations(ctx);
+        Cursor cr = db.getTab(db);
         if (cr != null && cr.moveToFirst()) {
             do {
                 if (tabName.equals(cr.getString(0))) {
@@ -128,7 +129,7 @@ public class NewTransaction extends AppCompatActivity {
             } while (cr.moveToFirst());
         }
         cr.close();
-        dbRead.close();
+//        db.close();
         return false;
     }
 

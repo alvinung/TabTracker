@@ -140,297 +140,297 @@
                     android:layout_height="100dp"
                     android:paddingBottom="5dp">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#ffffff">
+                    <!--   <RelativeLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:background="#ffffff">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="60dp"
-                            android:text="Alvin "
-                            android:textColor="#000000"
-                            android:id="@+id/postName1"
-                            android:textSize="30dp"
-                            android:background="#ffffff"
-                            android:layout_centerVertical="true"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginLeft="10dp"
-                            android:textStyle="bold" />
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="60dp"
+                              android:text="Alvin "
+                              android:textColor="#000000"
+                              android:id="@+id/postName1"
+                              android:textSize="30dp"
+                              android:background="#ffffff"
+                              android:layout_centerVertical="true"
+                              android:layout_alignParentLeft="true"
+                              android:layout_alignParentTop="true"
+                              android:layout_marginTop="10dp"
+                              android:layout_marginLeft="10dp"
+                              android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="60dp"
-                            android:text="paid "
-                            android:textColor="#959595"
-                            android:id="@+id/postStatus"
-                            android:textSize="30dp"
-                            android:background="#ffffff"
-                            android:layout_centerVertical="true"
-                            android:layout_toRightOf="@id/postName1"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="10dp"
-                            android:textStyle="bold" />
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="60dp"
+                              android:text="paid "
+                              android:textColor="#959595"
+                              android:id="@+id/postStatus"
+                              android:textSize="30dp"
+                              android:background="#ffffff"
+                              android:layout_centerVertical="true"
+                              android:layout_toRightOf="@id/postName1"
+                              android:layout_alignParentTop="true"
+                              android:layout_marginTop="10dp"
+                              android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="60dp"
-                            android:text="You"
-                            android:textColor="#000000"
-                            android:id="@+id/postName2"
-                            android:textSize="30dp"
-                            android:background="#ffffff"
-                            android:layout_centerVertical="true"
-                            android:layout_toRightOf="@id/postStatus"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="10dp"
-                            android:textStyle="bold" />
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="60dp"
+                              android:text="You"
+                              android:textColor="#000000"
+                              android:id="@+id/postName2"
+                              android:textSize="30dp"
+                              android:background="#ffffff"
+                              android:layout_centerVertical="true"
+                              android:layout_toRightOf="@id/postStatus"
+                              android:layout_alignParentTop="true"
+                              android:layout_marginTop="10dp"
+                              android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="60dp"
-                            android:text="+ $150.00"
-                            android:textColor="#2fad13"
-                            android:id="@+id/transAmount"
-                            android:textSize="30dp"
-                            android:background="#ffffff"
-                            android:layout_centerVertical="true"
-                            android:layout_alignParentRight="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="10dp" />
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="60dp"
+                              android:text="+ $150.00"
+                              android:textColor="#2fad13"
+                              android:id="@+id/transAmount"
+                              android:textSize="30dp"
+                              android:background="#ffffff"
+                              android:layout_centerVertical="true"
+                              android:layout_alignParentRight="true"
+                              android:layout_alignParentTop="true"
+                              android:layout_marginTop="10dp"
+                              android:layout_marginRight="10dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="40dp"
-                            android:text="settled debt"
-                            android:textColor="#000000"
-                            android:id="@+id/postReason"
-                            android:textSize="25dp"
-                            android:background="#ffffff"
-                            android:layout_centerVertical="true"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginBottom="5dp"
-                            android:layout_marginLeft="10dp" />
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="40dp"
+                              android:text="settled debt"
+                              android:textColor="#000000"
+                              android:id="@+id/postReason"
+                              android:textSize="25dp"
+                              android:background="#ffffff"
+                              android:layout_centerVertical="true"
+                              android:layout_alignParentLeft="true"
+                              android:layout_alignParentBottom="true"
+                              android:layout_marginBottom="5dp"
+                              android:layout_marginLeft="10dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="40dp"
-                            android:text="05/19/2016"
-                            android:textColor="#000000"
-                            android:id="@+id/postDate"
-                            android:textSize="25dp"
-                            android:background="#ffffff"
-                            android:layout_centerVertical="true"
-                            android:layout_alignParentRight="true"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginBottom="5dp"
-                            android:layout_marginRight="10dp" />
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="40dp"
+                              android:text="05/19/2016"
+                              android:textColor="#000000"
+                              android:id="@+id/postDate"
+                              android:textSize="25dp"
+                              android:background="#ffffff"
+                              android:layout_centerVertical="true"
+                              android:layout_alignParentRight="true"
+                              android:layout_alignParentBottom="true"
+                              android:layout_marginBottom="5dp"
+                              android:layout_marginRight="10dp" />
 
-                    </RelativeLayout>
+                      </RelativeLayout>
 
-                </LinearLayout>
+                  </LinearLayout>
 
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:paddingBottom="5dp">
+                  <LinearLayout
+                      android:orientation="vertical"
+                      android:layout_width="match_parent"
+                      android:layout_height="100dp"
+                      android:paddingBottom="5dp">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#ffffff">
+                      <RelativeLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:background="#ffffff">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="60dp"
-                            android:text="You "
-                            android:textColor="#000000"
-                            android:id="@+id/postName3"
-                            android:textSize="30dp"
-                            android:background="#ffffff"
-                            android:layout_centerVertical="true"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginLeft="10dp"
-                            android:textStyle="bold" />
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="60dp"
+                              android:text="You "
+                              android:textColor="#000000"
+                              android:id="@+id/postName3"
+                              android:textSize="30dp"
+                              android:background="#ffffff"
+                              android:layout_centerVertical="true"
+                              android:layout_alignParentLeft="true"
+                              android:layout_alignParentTop="true"
+                              android:layout_marginTop="10dp"
+                              android:layout_marginLeft="10dp"
+                              android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="60dp"
-                            android:text="charged "
-                            android:textColor="#959595"
-                            android:id="@+id/postStatus1"
-                            android:textSize="30dp"
-                            android:background="#ffffff"
-                            android:layout_centerVertical="true"
-                            android:layout_toRightOf="@id/postName3"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="10dp"
-                            android:textStyle="bold" />
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="60dp"
+                              android:text="charged "
+                              android:textColor="#959595"
+                              android:id="@+id/postStatus1"
+                              android:textSize="30dp"
+                              android:background="#ffffff"
+                              android:layout_centerVertical="true"
+                              android:layout_toRightOf="@id/postName3"
+                              android:layout_alignParentTop="true"
+                              android:layout_marginTop="10dp"
+                              android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="60dp"
-                            android:text="Alvin"
-                            android:textColor="#000000"
-                            android:id="@+id/postName4"
-                            android:textSize="30dp"
-                            android:background="#ffffff"
-                            android:layout_centerVertical="true"
-                            android:layout_toRightOf="@id/postStatus1"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="10dp"
-                            android:textStyle="bold" />
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="60dp"
+                              android:text="Alvin"
+                              android:textColor="#000000"
+                              android:id="@+id/postName4"
+                              android:textSize="30dp"
+                              android:background="#ffffff"
+                              android:layout_centerVertical="true"
+                              android:layout_toRightOf="@id/postStatus1"
+                              android:layout_alignParentTop="true"
+                              android:layout_marginTop="10dp"
+                              android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="60dp"
-                            android:text="$150.00"
-                            android:textColor="#000000"
-                            android:id="@+id/transAmount1"
-                            android:textSize="30dp"
-                            android:background="#ffffff"
-                            android:layout_centerVertical="true"
-                            android:layout_alignParentRight="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="10dp" />
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="60dp"
+                              android:text="$150.00"
+                              android:textColor="#000000"
+                              android:id="@+id/transAmount1"
+                              android:textSize="30dp"
+                              android:background="#ffffff"
+                              android:layout_centerVertical="true"
+                              android:layout_alignParentRight="true"
+                              android:layout_alignParentTop="true"
+                              android:layout_marginTop="10dp"
+                              android:layout_marginRight="10dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="40dp"
-                            android:text="flat screen television"
-                            android:textColor="#000000"
-                            android:id="@+id/postReason1"
-                            android:textSize="25dp"
-                            android:background="#ffffff"
-                            android:layout_centerVertical="true"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginBottom="5dp"
-                            android:layout_marginLeft="10dp" />
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="40dp"
+                              android:text="flat screen television"
+                              android:textColor="#000000"
+                              android:id="@+id/postReason1"
+                              android:textSize="25dp"
+                              android:background="#ffffff"
+                              android:layout_centerVertical="true"
+                              android:layout_alignParentLeft="true"
+                              android:layout_alignParentBottom="true"
+                              android:layout_marginBottom="5dp"
+                              android:layout_marginLeft="10dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="40dp"
-                            android:text="05/17/2016"
-                            android:textColor="#000000"
-                            android:id="@+id/postDate1"
-                            android:textSize="25dp"
-                            android:background="#ffffff"
-                            android:layout_centerVertical="true"
-                            android:layout_alignParentRight="true"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginBottom="5dp"
-                            android:layout_marginRight="10dp" />
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="40dp"
+                              android:text="05/17/2016"
+                              android:textColor="#000000"
+                              android:id="@+id/postDate1"
+                              android:textSize="25dp"
+                              android:background="#ffffff"
+                              android:layout_centerVertical="true"
+                              android:layout_alignParentRight="true"
+                              android:layout_alignParentBottom="true"
+                              android:layout_marginBottom="5dp"
+                              android:layout_marginRight="10dp" />
 
-                    </RelativeLayout>
+                      </RelativeLayout>
 
-                </LinearLayout>
+                  </LinearLayout>
 
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:paddingBottom="5dp">
+                  <LinearLayout
+                      android:orientation="vertical"
+                      android:layout_width="match_parent"
+                      android:layout_height="100dp"
+                      android:paddingBottom="5dp">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#ffffff">
+                      <RelativeLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:background="#ffffff">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="60dp"
-                            android:text="You "
-                            android:textColor="#000000"
-                            android:id="@+id/postName5"
-                            android:textSize="30dp"
-                            android:background="#ffffff"
-                            android:layout_centerVertical="true"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginLeft="10dp"
-                            android:textStyle="bold" />
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="60dp"
+                              android:text="You "
+                              android:textColor="#000000"
+                              android:id="@+id/postName5"
+                              android:textSize="30dp"
+                              android:background="#ffffff"
+                              android:layout_centerVertical="true"
+                              android:layout_alignParentLeft="true"
+                              android:layout_alignParentTop="true"
+                              android:layout_marginTop="10dp"
+                              android:layout_marginLeft="10dp"
+                              android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="60dp"
-                            android:text="paid "
-                            android:textColor="#959595"
-                            android:id="@+id/postStatus7"
-                            android:textSize="30dp"
-                            android:background="#ffffff"
-                            android:layout_centerVertical="true"
-                            android:layout_toRightOf="@id/postName5"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="10dp"
-                            android:textStyle="bold" />
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="60dp"
+                              android:text="paid "
+                              android:textColor="#959595"
+                              android:id="@+id/postStatus7"
+                              android:textSize="30dp"
+                              android:background="#ffffff"
+                              android:layout_centerVertical="true"
+                              android:layout_toRightOf="@id/postName5"
+                              android:layout_alignParentTop="true"
+                              android:layout_marginTop="10dp"
+                              android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="60dp"
-                            android:text="Alvin"
-                            android:textColor="#000000"
-                            android:id="@+id/postName6"
-                            android:textSize="30dp"
-                            android:background="#ffffff"
-                            android:layout_centerVertical="true"
-                            android:layout_toRightOf="@id/postStatus7"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="10dp"
-                            android:textStyle="bold" />
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="60dp"
+                              android:text="Alvin"
+                              android:textColor="#000000"
+                              android:id="@+id/postName6"
+                              android:textSize="30dp"
+                              android:background="#ffffff"
+                              android:layout_centerVertical="true"
+                              android:layout_toRightOf="@id/postStatus7"
+                              android:layout_alignParentTop="true"
+                              android:layout_marginTop="10dp"
+                              android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="60dp"
-                            android:text="- $10.00"
-                            android:textColor="#bc0707"
-                            android:id="@+id/transAmount7"
-                            android:textSize="30dp"
-                            android:background="#ffffff"
-                            android:layout_centerVertical="true"
-                            android:layout_alignParentRight="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="10dp" />
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="60dp"
+                              android:text="- $10.00"
+                              android:textColor="#bc0707"
+                              android:id="@+id/transAmount7"
+                              android:textSize="30dp"
+                              android:background="#ffffff"
+                              android:layout_centerVertical="true"
+                              android:layout_alignParentRight="true"
+                              android:layout_alignParentTop="true"
+                              android:layout_marginTop="10dp"
+                              android:layout_marginRight="10dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="40dp"
-                            android:text="food"
-                            android:textColor="#000000"
-                            android:id="@+id/postReason7"
-                            android:textSize="25dp"
-                            android:background="#ffffff"
-                            android:layout_centerVertical="true"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginBottom="5dp"
-                            android:layout_marginLeft="10dp" />
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="40dp"
+                              android:text="food"
+                              android:textColor="#000000"
+                              android:id="@+id/postReason7"
+                              android:textSize="25dp"
+                              android:background="#ffffff"
+                              android:layout_centerVertical="true"
+                              android:layout_alignParentLeft="true"
+                              android:layout_alignParentBottom="true"
+                              android:layout_marginBottom="5dp"
+                              android:layout_marginLeft="10dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="40dp"
-                            android:text="05/15/2016"
-                            android:textColor="#000000"
-                            android:id="@+id/postDate7"
-                            android:textSize="25dp"
-                            android:background="#ffffff"
-                            android:layout_centerVertical="true"
-                            android:layout_alignParentRight="true"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginBottom="5dp"
-                            android:layout_marginRight="10dp" />
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="40dp"
+                              android:text="05/15/2016"
+                              android:textColor="#000000"
+                              android:id="@+id/postDate7"
+                              android:textSize="25dp"
+                              android:background="#ffffff"
+                              android:layout_centerVertical="true"
+                              android:layout_alignParentRight="true"
+                              android:layout_alignParentBottom="true"
+                              android:layout_marginBottom="5dp"
+                              android:layout_marginRight="10dp" />
 
-                    </RelativeLayout>
+                      </RelativeLayout> -->
 
                 </LinearLayout>
 
