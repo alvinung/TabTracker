@@ -24,6 +24,6 @@ public class TableData {
         public static final String OWED = "owed";
         public static final String OWE = "owe";
         public static final String TIME = "time";
-        public static final String DATABASE_NAME = "tabs_data9";
+        public static final String DATABASE_NAME = "tabs_data10";
     }
 }

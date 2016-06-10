@@ -118,6 +118,19 @@ public class DatabaseOperations extends SQLiteOpenHelper {
         return cr;
     }
 
+    // pull all data for graph
+    public Cursor getDataPoints (DatabaseOperations dbop, String loan) {
+
+        SQLiteDatabase sq = dbop.getReadableDatabase();
+        String[] columns = {TableData.TableInfo.AMOUNT, TableData.TableInfo.LOAN, TableData.TableInfo.TIME};
+        String where = TableData.TableInfo.LOAN + " = ?";
+        String[] whereArgs = new String[] {loan};
+        String orderBy = TableData.TableInfo.TIME + " DESC";
+
+        Cursor cr = sq.query(TableData.TableInfo.TABS_TABLE, columns, where, whereArgs, null, null, orderBy);
+        return cr;
+    }
+
     // pulling all data from tabs_table for history
     public Cursor getTab (DatabaseOperations dbop) {
 
