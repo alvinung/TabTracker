@@ -23,6 +23,7 @@ public class Tabs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabs);
 
+        String username = "";
         LinearLayout holder = (LinearLayout) findViewById(R.id.feedLayout);
         LayoutInflater inflater = LayoutInflater.from(Tabs.this);
         holder.removeAllViews();
@@ -73,6 +74,16 @@ public class Tabs extends AppCompatActivity {
             tv.setText("");
             holder.addView(child);
         }
+    }
+
+    // post is clicked
+    public void getDetails (View view) {
+        TextView user = (TextView) findViewById(R.id.postName1);
+        String username = (String) user.getText();
+
+        Intent intent = new Intent(view.getContext(), Details.class);
+        intent.putExtra("name",username);
+        view.getContext().startActivity(intent);
     }
 
     // new transaction button is clicked

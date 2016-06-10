@@ -107,7 +107,7 @@ public class Dashboard extends AppCompatActivity {
                     tv.setText("You");
                 }
                 holder.addView(child);
-                Log.d("Dashboard", "posted 1 transaction to feed");
+                Log.d("Dashboard", "posted 1 transaction to dashboard feed");
             } while (cr.moveToNext());
         }
         cr.close();
