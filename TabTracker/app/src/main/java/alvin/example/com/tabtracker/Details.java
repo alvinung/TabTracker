@@ -1,6 +1,7 @@
 package alvin.example.com.tabtracker;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 public class Details extends AppCompatActivity {
 
     Context ctx = this;
+    String type = "set";
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +23,7 @@ public class Details extends AppCompatActivity {
         setContentView(R.layout.activity_details);
 
         Bundle extras = getIntent().getExtras();
-        String username = extras.getString("name");
+        username = extras.getString("name");
 
         loadFeed(username);
 
@@ -88,6 +91,13 @@ public class Details extends AppCompatActivity {
 
         nameText.setText(user);
         balanceText.setText("$" + total);
+    }
+
+    // settle button is clicked
+    public void settle (View view) {
+        Intent intent = new Intent(view.getContext(), Settle.class);
+        intent.putExtra("name",username);
+        view.getContext().startActivity(intent);
     }
 
 }

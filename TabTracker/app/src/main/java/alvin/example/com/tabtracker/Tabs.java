@@ -78,7 +78,7 @@ public class Tabs extends AppCompatActivity {
 
     // post is clicked
     public void getDetails (View view) {
-        TextView user = (TextView) findViewById(R.id.postName1);
+        TextView user = (TextView) view.findViewById(R.id.postName1);
         String username = (String) user.getText();
 
         Intent intent = new Intent(view.getContext(), Details.class);

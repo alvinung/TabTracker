@@ -16,7 +16,7 @@
         android:background="@drawable/button"
         android:textColor="#ffffff"
         android:textSize="25dp"
-        android:onClick="newTransaction"
+        android:onClick="settle"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 

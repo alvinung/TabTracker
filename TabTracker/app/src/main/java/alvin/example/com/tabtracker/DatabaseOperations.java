@@ -90,7 +90,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 
     // adding to tabs_table
     public void addTab (DatabaseOperations dbop, String name, String date, String amount, String reason,
-                        String type, String loan, String balance) {
+                        String type, String loan, String imbalance) {
 
         SQLiteDatabase sq = dbop.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -100,7 +100,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
         cv.put(TableData.TableInfo.DATE, date);
         cv.put(TableData.TableInfo.AMOUNT, amount);
         cv.put(TableData.TableInfo.REASON, reason);
-        cv.put(TableData.TableInfo.IMBALANCE, balance);
+        cv.put(TableData.TableInfo.IMBALANCE, imbalance);
         cv.put(TableData.TableInfo.TYPE, type);
         cv.put(TableData.TableInfo.LOAN, loan);
         cv.put(TableData.TableInfo.TIME, time);

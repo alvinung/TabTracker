@@ -18,7 +18,8 @@
         <activity android:name=".Tabs" />
         <activity android:name=".NewTransaction" />
         <activity android:name=".Settlement" />
-        <activity android:name=".Details"></activity>
+        <activity android:name=".Details" />
+        <activity android:name=".Settle"></activity>
     </application>
 
 </manifest>
