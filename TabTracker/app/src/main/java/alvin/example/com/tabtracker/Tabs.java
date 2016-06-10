@@ -32,14 +32,45 @@ public class Tabs extends AppCompatActivity {
         Log.d("Tabs", "pulled all users from database");
         for (String user : tabs) {
             View child = inflater.inflate(R.layout.history_post, null, false);
+            String balance = "";
+            String date = "";
+
+            DatabaseOperations db = new DatabaseOperations(ctx);
+            Cursor cr = db.getUserTab(db, user);
+            if (cr != null && cr.moveToFirst()) {
+                do {
+                    balance = cr.getString(1);
+                    date = cr.getString(2);
+                } while (cr.moveToNext());
+            }
+
             TextView tv = (TextView) child.findViewById(R.id.postName1);
             tv.setText(user);
             tv = (TextView) child.findViewById(R.id.postReason);
-            tv.setText("Last Transaction: 06/09/2016");
+            tv.setText("Last Transaction: " + date);
             tv = (TextView) child.findViewById(R.id.transAmount);
-            tv.setText("$56.65");
+            if (Double.parseDouble(balance) > 0) {
+                tv.setTextColor(0xFF07BF32);
+                tv.setText(balance);
+            }
+            else if (Double.parseDouble(balance) < 0) {
+                tv.setTextColor(0xFFD30012);
+                tv.setText(balance);
+            }
+            else {
+                tv.setText("0.00");
+            }
             tv = (TextView) child.findViewById(R.id.postDate);
-            tv.setText("Open");
+            if (Double.parseDouble(balance) == 0) {
+                tv.setText("Closed");
+            }
+            else {
+                tv.setText("Open");
+            }
+            tv = (TextView) child.findViewById(R.id.postName2);
+            tv.setText("");
+            tv = (TextView) child.findViewById(R.id.postStatus);
+            tv.setText("");
             holder.addView(child);
         }
     }

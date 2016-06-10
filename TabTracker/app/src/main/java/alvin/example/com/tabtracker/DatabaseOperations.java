@@ -22,7 +22,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
     // string to create tabs_table
     public String CREATE_TABS_DATA_QUERY = "CREATE TABLE " + TableData.TableInfo.TABS_TABLE + "(" +
             TableData.TableInfo.NAME + " TEXT," + TableData.TableInfo.DATE + " TEXT," + TableData.TableInfo.AMOUNT +
-            " TEXT," + TableData.TableInfo.REASON + " TEXT," + TableData.TableInfo.POST_NUM + " TEXT," +
+            " TEXT," + TableData.TableInfo.REASON + " TEXT," + TableData.TableInfo.IMBALANCE + " TEXT," +
             TableData.TableInfo.TYPE + " TEXT," + TableData.TableInfo.LOAN + " TEXT," +
             TableData.TableInfo.TIME + " TEXT);";
 
@@ -89,7 +89,8 @@ public class DatabaseOperations extends SQLiteOpenHelper {
     }
 
     // adding to tabs_table
-    public void addTab (DatabaseOperations dbop, String name, String date, String amount, String reason, String type, String loan) {
+    public void addTab (DatabaseOperations dbop, String name, String date, String amount, String reason,
+                        String type, String loan, String balance) {
 
         SQLiteDatabase sq = dbop.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -99,11 +100,10 @@ public class DatabaseOperations extends SQLiteOpenHelper {
         cv.put(TableData.TableInfo.DATE, date);
         cv.put(TableData.TableInfo.AMOUNT, amount);
         cv.put(TableData.TableInfo.REASON, reason);
-        cv.put(TableData.TableInfo.POST_NUM, postCount);
+        cv.put(TableData.TableInfo.IMBALANCE, balance);
         cv.put(TableData.TableInfo.TYPE, type);
         cv.put(TableData.TableInfo.LOAN, loan);
         cv.put(TableData.TableInfo.TIME, time);
-        postCount++;
 
         sq.insert(TableData.TableInfo.TABS_TABLE, null, cv);
         Log.d("Database Operations", "One row inserted into tabs_table");
@@ -123,7 +123,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 
         SQLiteDatabase sq = dbop.getReadableDatabase();
         String[] columns = {TableData.TableInfo.NAME, TableData.TableInfo.DATE, TableData.TableInfo.AMOUNT,
-                TableData.TableInfo.REASON, TableData.TableInfo.POST_NUM, TableData.TableInfo.TYPE, TableData.TableInfo.LOAN,
+                TableData.TableInfo.REASON, TableData.TableInfo.IMBALANCE, TableData.TableInfo.TYPE, TableData.TableInfo.LOAN,
                 TableData.TableInfo.TIME};
         String orderBy = TableData.TableInfo.TIME + " DESC";
 
@@ -141,12 +141,26 @@ public class DatabaseOperations extends SQLiteOpenHelper {
         return cr;
     }
 
+    // pull imbalance data
+    public Cursor getUserTab(DatabaseOperations dbop, String user) {
+
+        SQLiteDatabase sq = dbop.getReadableDatabase();
+        String[] columns = {TableData.TableInfo.NAME, TableData.TableInfo.IMBALANCE, TableData.TableInfo.DATE,
+                TableData.TableInfo.TIME};
+        String where = TableData.TableInfo.NAME + " = ?";
+        String[] whereArgs = new String[] {user};
+        String orderBy = TableData.TableInfo.TIME + " DESC LIMIT 1";
+
+        Cursor cr = sq.query(TableData.TableInfo.TABS_TABLE, columns, where, whereArgs, null, null, orderBy);
+        return cr;
+    }
+
     // pulling from tabs_table for specific person
     public Cursor getSpecTab (DatabaseOperations dbop, String name) {
 
         SQLiteDatabase sq = dbop.getReadableDatabase();
         String[] columns = {TableData.TableInfo.NAME, TableData.TableInfo.DATE, TableData.TableInfo.AMOUNT,
-                TableData.TableInfo.REASON, TableData.TableInfo.POST_NUM, TableData.TableInfo.TYPE, TableData.TableInfo.LOAN,
+                TableData.TableInfo.REASON, TableData.TableInfo.IMBALANCE, TableData.TableInfo.TYPE, TableData.TableInfo.LOAN,
                 TableData.TableInfo.TIME};
         String where = TableData.TableInfo.NAME + " = ?";
         String[] whereArgs = new String[] {name};

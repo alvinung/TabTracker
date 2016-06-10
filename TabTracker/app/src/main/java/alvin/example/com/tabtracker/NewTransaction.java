@@ -104,25 +104,29 @@ public class NewTransaction extends AppCompatActivity {
             loan = "no";
         }
 
-        Log.d("******Exist******0", Integer.toString(ex));
+        Log.d("******Exist******", Integer.toString(ex));
         // checking for existing tabs
         if (ex != 1 && exist) {
             // already exists, try again
             Toast.makeText(getBaseContext(), "Tab already exists, try a different name", Toast.LENGTH_SHORT).show();
         }
         else {
-            // add to database
-            db.addTab(db, name, date, amount, reason, type, loan);
-//            db.close();
-
+            // get imbalance
+            Double total = Double.parseDouble(getImbalance(name));
             Log.d("******NT*****", loan);
 
             if (loan.equals("yes")) {
                 owed += Double.parseDouble(amount);
+                total -= Double.parseDouble(amount);
             }
             else {
                 owe += Double.parseDouble(amount);
+                total += Double.parseDouble(amount);
             }
+
+            // add to database
+            db.addTab(db, name, date, amount, reason, type, loan, total.toString());
+//            db.close();
             db.addTotal(db, owed, owe);
 
             // go to dashboard
@@ -149,6 +153,21 @@ public class NewTransaction extends AppCompatActivity {
         return false;
     }
 
+    // get user imbalance
+    public String getImbalance (String name) {
+        String balance = "0.00";
+        DatabaseOperations db = new DatabaseOperations(ctx);
+        Cursor cr = db.getUserTab(db, name);
+        if (cr != null && cr.moveToFirst()) {
+            do {
+                balance = cr.getString(1);
+            } while (cr.moveToNext());
+        }
+        cr.close();
+        db.close();
+        return balance;
+    }
+
     // get current total data
     public void getTotals () {
         DatabaseOperations db = new DatabaseOperations(ctx);
@@ -159,6 +178,8 @@ public class NewTransaction extends AppCompatActivity {
                 owe = cr.getDouble(1);
             } while (cr.moveToNext());
         }
+        cr.close();
+        db.close();
     }
 
     // all submit button is clicked
