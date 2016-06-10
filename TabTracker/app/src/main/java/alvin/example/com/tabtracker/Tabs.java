@@ -32,7 +32,7 @@ public class Tabs extends AppCompatActivity {
         tabs = getUsers();
         Log.d("Tabs", "pulled all users from database");
         for (String user : tabs) {
-            View child = inflater.inflate(R.layout.history_post, null, false);
+            View child = inflater.inflate(R.layout.tabs_post, null, false);
             String balance = "";
             String date = "";
 

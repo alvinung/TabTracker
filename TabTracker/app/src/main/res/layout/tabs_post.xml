@@ -4,12 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:paddingBottom="5dp">
-    <!--android:background="@drawable/shadow"-->
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffffff">
+        android:background="#ffffff"
+        android:onClick="getDetails">
 
         <TextView
             android:layout_width="wrap_content"

@@ -43,20 +43,27 @@ public class Settle extends AppCompatActivity {
 
         DatabaseOperations db = new DatabaseOperations(ctx);
 
-        if (total > 0) {
+        if (total == 0) {
+            Toast.makeText(getBaseContext(), "Balance is $0.00\nSettlement canceled ", Toast.LENGTH_LONG).show();
+
+            // go to dashboard
+            Intent intent = new Intent(this, Dashboard.class);
+            startActivity(intent);
+            db.close();
+            finish();
+        }
+        else if (total > 0) {
             total -= Double.parseDouble(amount);
             owe -= Double.parseDouble(amount);
+            db.addTab(db, user, date, amount, memo, type, "none", Double.toString(total));
+            db.addTotal(db, owed, owe);
         }
         else if (total < 0) {
             total += Double.parseDouble(amount);
             owed -= Double.parseDouble(amount);
+            db.addTab(db, user, date, amount, memo, type, "none", Double.toString(total));
+            db.addTotal(db, owed, owe);
         }
-        else {
-            Toast.makeText(getBaseContext(), "Balance is $0.00", Toast.LENGTH_SHORT).show();
-        }
-        db.addTab(db, user, date, amount, memo, type, "none", Double.toString(total));
-        db.addTotal(db, owed, owe);
-
         db.close();
 
         // go to dashboard
