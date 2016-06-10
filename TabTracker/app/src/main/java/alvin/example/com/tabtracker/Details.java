@@ -18,10 +18,19 @@ public class Details extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+
+        Bundle extras = getIntent().getExtras();
+        String username = extras.getString("name");
+
+        loadFeed(username);
+
     }
 
     // load feed
     public void loadFeed(String user) {
+        TextView nameText = (TextView) findViewById(R.id.usernameText);
+        TextView balanceText = (TextView) findViewById(R.id.amountText);
+
         LinearLayout holder = (LinearLayout) findViewById(R.id.feedLayout);
         LayoutInflater inflater = LayoutInflater.from(Details.this);
         holder.removeAllViews();
@@ -67,9 +76,18 @@ public class Details extends AppCompatActivity {
                 }
                 holder.addView(child);
                 Log.d("Dashboard", "posted 1 transaction to details feed");
-
             } while (cr.moveToNext());
         }
+        String total = "";
+        cr = db.getUserTab(db, user);
+        if (cr != null && cr.moveToFirst()) {
+            do {
+                total = cr.getString(1);
+            } while (cr.moveToNext());
+        }
+
+        nameText.setText(user);
+        balanceText.setText("$" + total);
     }
 
 }
