@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.ContactsContract;
 import android.util.Log;
 
 import java.text.SimpleDateFormat;
@@ -127,6 +128,16 @@ public class DatabaseOperations extends SQLiteOpenHelper {
         String orderBy = TableData.TableInfo.TIME + " DESC";
 
         Cursor cr = sq.query(TableData.TableInfo.TABS_TABLE, columns, null, null, null, null, orderBy);
+        return cr;
+    }
+
+    // pull all users from tabs_table
+    public Cursor getUsers (DatabaseOperations dbop) {
+
+        SQLiteDatabase sq = dbop.getReadableDatabase();
+        String[] columns = {"DISTINCT " + TableData.TableInfo.NAME};
+
+        Cursor cr = sq.query(TableData.TableInfo.TABS_TABLE, columns, null, null, null, null, null);
         return cr;
     }
 

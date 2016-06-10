@@ -87,7 +87,7 @@ public class Dashboard extends AppCompatActivity {
                 tv = (TextView) child.findViewById(R.id.postDate);
                 tv.setText(date);
                 tv = (TextView) child.findViewById(R.id.transAmount);
-                tv.setText(amount);
+                tv.setText("$" + amount);
 
                 tv = (TextView) child.findViewById(R.id.postStatus);
                 if (type.equals("trans")) {
