@@ -19,6 +19,10 @@ public class TableData {
         public static final String TYPE = "post_type";
         public static final String LOAN = "loan";
         public static final String TABS_TABLE = "tabs_table";
-        public static final String DATABASE_NAME = "tabs_data2";
+        public static final String TOTALS_TABLE = "totals_table";
+        public static final String OWED = "owed";
+        public static final String OWE = "owe";
+        public static final String TIME = "time";
+        public static final String DATABASE_NAME = "tabs_data8";
     }
 }

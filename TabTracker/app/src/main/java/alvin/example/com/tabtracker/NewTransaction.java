@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.opengl.EGLDisplay;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -19,6 +20,8 @@ public class NewTransaction extends AppCompatActivity {
     int lo = 0;
     String name, amount, reason, date, loan;
     String type = "trans";
+    double owed = 0.00;
+    double owe = 0.00;
     Boolean exist = false;
     Context ctx = this;
 
@@ -26,6 +29,8 @@ public class NewTransaction extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_transaction);
+
+        getTotals();
 
         exY = (CheckBox) findViewById(R.id.yesBox1);
         exN = (CheckBox) findViewById(R.id.noBox1);
@@ -95,10 +100,11 @@ public class NewTransaction extends AppCompatActivity {
         if (lo == 1) {
             loan = "yes";
         }
-        else if (lo == 2) {
+        else { //(lo == 2) {
             loan = "no";
         }
 
+        Log.d("******Exist******0", Integer.toString(ex));
         // checking for existing tabs
         if (ex != 1 && exist) {
             // already exists, try again
@@ -108,6 +114,16 @@ public class NewTransaction extends AppCompatActivity {
             // add to database
             db.addTab(db, name, date, amount, reason, type, loan);
 //            db.close();
+
+            Log.d("******NT*****", loan);
+
+            if (loan.equals("yes")) {
+                owed += Double.parseDouble(amount);
+            }
+            else {
+                owe += Double.parseDouble(amount);
+            }
+            db.addTotal(db, owed, owe);
 
             // go to dashboard
             Intent intent = new Intent(this, Dashboard.class);
@@ -131,6 +147,18 @@ public class NewTransaction extends AppCompatActivity {
         cr.close();
 //        db.close();
         return false;
+    }
+
+    // get current total data
+    public void getTotals () {
+        DatabaseOperations db = new DatabaseOperations(ctx);
+        Cursor cr = db.getTotal(db);
+        if (cr != null && cr.moveToFirst()) {
+            do {
+                owed = cr.getDouble(0);
+                owe = cr.getDouble(1);
+            } while (cr.moveToNext());
+        }
     }
 
     // all submit button is clicked
